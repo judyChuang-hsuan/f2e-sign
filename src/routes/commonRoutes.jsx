@@ -1,9 +1,9 @@
 import React,{lazy} from 'react'
 import { useRoutes } from "react-router-dom";
 
-const HistoryPage = lazy(()=>import('../pages/HistoryPage'))
+const HistoryPage = lazy(()=>import('../pages/historyPage/HistoryPage'))
 const SignPage = lazy(()=>import('../pages/signPage/SignPage'))
-const HomePage = lazy(()=>import('../pages/homepage/HomePage'))
+const HomePage = lazy(()=>import('../pages/homePage/HomePage'))
 
 export default function commonRoutes(){
     let routes = useRoutes([

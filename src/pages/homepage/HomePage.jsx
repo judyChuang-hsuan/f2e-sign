@@ -21,7 +21,7 @@ const home = [
 const HomePage = () =>{
     return(
         <main className="homepage">
-            <Navbar/>
+            <Navbar text={"歷史文件"} link={"/history"}/>
                 <div className="cardSection">
                     {home.map((card)=>(
                         <Card key={card.id} {...card}/>
