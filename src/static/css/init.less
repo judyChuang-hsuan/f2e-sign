@@ -1,4 +1,5 @@
-
+@desktop:   ~"only screen and (min-width: 960px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
 [hidden] {
 	display: none;
 }
@@ -7,6 +8,7 @@ body,
 #app,
 #root {
 	height: 100%;
+	overflow: hidden;
 }
 * {
 	-webkit-box-sizing: border-box;
@@ -18,10 +20,16 @@ body,
 main{
 	height: 100%;
 	width: 100%;
-	background-image: url(/src/assets/backgroundDesktop.png);
+	background-image: url(/src/assets/backgroundMobile.png);
 	background-position: center;
 	background-size: cover;
 	padding: 17px 27px;
+	@media @desktop{
+		background-image: url(/src/assets/backgroundDesktop.png);
+	}
+	@media @tablet{
+		background-image: url(/src/assets/backgroundTablet.png);
+	}
 }
 *:before,
 *:after {
