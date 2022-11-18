@@ -1,9 +1,8 @@
 @import '../../static/css/init.less';
+@desktop: ~"only screen and (min-width:600px)";
 
 
-.homepage{
-   background-image: url(../../assets/backgroundDesktop.png); 
-   
+.homepage{ 
    .cardSection{
       display:flex;
       justify-content: center;
@@ -22,6 +21,12 @@
       gap:28px;
       color: #f8eaa3;
       letter-spacing: 4px;
+      
+      @media @desktop{
+         height: 20rem;
+         width: 20rem;
+      }
+      
       .iconSection{
          border:1px solid #f8eaa3;
          height: 88px;
@@ -31,10 +36,25 @@
          display:flex;
          justify-content: center;
          align-items: center;
+         @media @desktop{
+            height: 204px;
+            width: 204px;
+         }
          img{
             width: 46px;
             height: 54px;
+            @media @desktop{
+               width: 6rem;
+               height: 7rem;
+            }
 
+         }
+      }
+      h5{
+         font-family: 'Noto Sans';
+         font-weight: 500;
+         @media @desktop{
+            font-size: 24px;
          }
       }
    }

@@ -1,5 +1,5 @@
 @desktop:   ~"only screen and (min-width: 960px)";
-@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@tablet:    ~"only screen and (min-width: 600px) and (max-width: 959px)";
 [hidden] {
 	display: none;
 }
@@ -26,10 +26,12 @@ main{
 	padding: 17px 27px;
 	@media @desktop{
 		background-image: url(/src/assets/backgroundDesktop.png);
+		
 	}
 	@media @tablet{
 		background-image: url(/src/assets/backgroundTablet.png);
 	}
+
 }
 *:before,
 *:after {
@@ -102,6 +104,7 @@ a {
 	cursor: pointer;
 	-webkit-transition: color 0.2s ease;
 	transition: color 0.2s ease;
+	display: block;
 }
 a:active,
 a:hover {

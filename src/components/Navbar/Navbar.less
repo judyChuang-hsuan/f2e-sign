@@ -1,15 +1,26 @@
+@desktop: ~"only screen and (min-width:600px)";
+
 nav{
     // border: 1px solid #ffffff;
     display:flex;
     align-items: center;
     justify-content: flex-end;
     padding: 17px 27px;
+    @media @desktop{
+      padding: 0;
+      gap:40rem;
+      
+    }
     
     .logo{
        // border: 1px solid #ffffff;
        // margin: auto;
        height: 50px;
        width: 150px;
+       position: absolute;
+       top:1%;
+       left:50%;
+       transform: translateX(-50%);
        img{
           width: 100%;
           height: 100%;
@@ -22,8 +33,18 @@ nav{
        align-items: center;
        justify-content: center;
        background-color: #f8eaa3;
+       box-shadow: 0px 0px 4px #FFEC8A;
        color: #00212d;
        font-family: 'Noto Sans TC',sans-serif;
 	    font-weight: 400;
+       @media @desktop{
+         width: 154px;
+         height: 47px;
+       }
+    }
+    .navBtn:hover{
+      background-color: transparent;
+      color: #f8eaa3;
+      border: 1px solid #f8eaa3;
     }
  }
