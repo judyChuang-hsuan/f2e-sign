@@ -13,7 +13,8 @@ const UploadFile = () =>{
         const reader = new FileReader();
         reader.addEventListener("load", function () {
           setImageAlt(file.name)
-          setImageSrc(reader.result)
+          setImageSrc(reader.result).
+          console.log(reader)
         }, false);
     
         if (file) {
