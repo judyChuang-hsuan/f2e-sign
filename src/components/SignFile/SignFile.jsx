@@ -2,6 +2,7 @@ import { Stepper,Step,StepContent,Button, StepLabel } from "@mui/material"
 import './SignFile.less'
 import React,{useState} from 'react'
 import UploadFile from "@components/UploadFile/UploadFile"
+
 const steps=[
     {
         id:1,
@@ -9,7 +10,7 @@ const steps=[
     },
     {
         id:2,
-        component:'hi2'
+        component:<UploadFile/>
     },
     {
         id:3,

@@ -1,6 +1,7 @@
 @white: #ffffff;
 @background: #f8eaa3;
 @btnBackground: #cb9b0c;
+@desktop: ~"only screen and (min-width:600px)";
 
 .uploadSection{
     width: 290px;
@@ -8,6 +9,11 @@
     border: 1px solid @white;
     background-color: rgba(255,255,255,0.95);
     border-radius: 4px;
+    @media @desktop{
+        width: 100%;
+        height: 560px;
+    }
+    
     .descriptionSection{
         display:flex;
         border-bottom: 0.5px solid #000000;
@@ -16,6 +22,9 @@
         padding: 19px 0;
         width: 90%;
         margin: auto;
+        @media @desktop {
+            justify-content: flex-end;
+        }
         ul{
             padding: 0 10px;
         }
@@ -39,6 +48,9 @@
                 padding: 9px;
                 font-size: 12px;
                 letter-spacing: 2px;
+                @media @desktop{
+                    padding:20px 9px;
+                }
             }
         }
     }
@@ -53,6 +65,10 @@
         img{
             height: 314px;
             width: 258px;
+            @media desktop{
+                height: 399px;
+                width: 305px;
+            }
         }
     }
     
