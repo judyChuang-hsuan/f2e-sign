@@ -4,14 +4,17 @@
 @desktop: ~"only screen and (min-width:600px)";
 
 .uploadSection{
-    width: 290px;
-    height: 588px;
+    width: 100%;
+    height: 500px;
     border: 1px solid @white;
     background-color: rgba(255,255,255,0.95);
     border-radius: 4px;
+    margin: auto;
     @media @desktop{
-        width: 100%;
-        height: 560px;
+        width: 90%;
+        height: 55rem;
+        margin: auto;
+
     }
     
     .descriptionSection{
@@ -24,6 +27,7 @@
         margin: auto;
         @media @desktop {
             justify-content: flex-end;
+            width: 96%;
         }
         ul{
             padding: 0 10px;
@@ -33,6 +37,11 @@
             font-size: 12px;
             line-height: 1.4;
             font-family: 'Inter', sans-serif;
+
+            @media @desktop{
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
         }
         .descriptionBtn{
             background-color: @btnBackground;
@@ -44,12 +53,17 @@
             justify-content: center;
             align-items: center;
             border-radius: 4px;
+            @media @desktop{
+                width: 15rem;
+                height: 4.7rem;
+            }
             label{
                 padding: 9px;
                 font-size: 12px;
                 letter-spacing: 2px;
                 @media @desktop{
-                    padding:20px 9px;
+                    padding:25px 9px;
+                    font-size: 16px;
                 }
             }
         }
@@ -60,14 +74,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         font-family: 'Inter', sans-serif;
         color: #6f6f6f;
-        img{
+        canvas{
             height: 314px;
             width: 258px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
             @media desktop{
-                height: 399px;
-                width: 305px;
+                height: 25rem;
+                width: 20rem;
             }
         }
     }

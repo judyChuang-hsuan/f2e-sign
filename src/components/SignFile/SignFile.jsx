@@ -2,7 +2,7 @@ import { Stepper,Step,StepContent,Button, StepLabel } from "@mui/material"
 import './SignFile.less'
 import React,{useState} from 'react'
 import UploadFile from "@components/UploadFile/UploadFile"
-
+import CreateSignature from '@components/CreateSignature/CreateSignature'
 const steps=[
     {
         id:1,
@@ -10,7 +10,7 @@ const steps=[
     },
     {
         id:2,
-        component:<UploadFile/>
+        component:<CreateSignature/>
     },
     {
         id:3,

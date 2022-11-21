@@ -1,5 +1,7 @@
 @background-color: #f8eaa3;
 @black: #000000;
+@white: #ffffff;
+@btnBackground: #cb9b0c;
 @desktop: ~"only screen and (min-width:600px)";
 .stepSection{
     // border: 1px solid #fff;
@@ -35,6 +37,10 @@
         border-radius: 4px;
         background-color: @background-color;
         color: @black;
+        &:hover{
+            background-color: @btnBackground;
+            color: @white;
+        }
         @media @desktop{
             width: 306px;
             height: 51px;
@@ -46,6 +52,10 @@
         border-radius: 4px;
         border: 1px solid @background-color;
         color: @background-color;
+        &:hover{
+            background-color: @btnBackground;
+            color: @white;
+        }
         @media @desktop{
             width: 306px;
             height: 51px;
