@@ -4,7 +4,7 @@ import { Button } from '@mui/material'
 const SignatureList = () =>{
     const [imageSrc, setImageSrc] = useState([])
     const [disableBtn, setDisableBtn] = useState(false)
-
+    console.log(imageSrc)
     //預覽上傳的簽名照
     const handleOnPreview = (event) => {
         const file = event.target.files[0];
@@ -12,6 +12,7 @@ const SignatureList = () =>{
         reader.addEventListener("load", function () {
             const src={id:imageSrc.length+1,image:reader.result}
             setImageSrc([...imageSrc,src])
+            localStorage.setItem('signature',JSON.stringify([...imageSrc,src]))
         }, false);
         if (file) {
           reader.readAsDataURL(file);
@@ -29,7 +30,6 @@ const SignatureList = () =>{
         }else{
             setDisableBtn(false)
         }
-        console.log(disableBtn)
       },[imageSrc])
 
 
@@ -37,7 +37,7 @@ const SignatureList = () =>{
         <section>
             <div className="signatureDescription">
                 <h5 className="descriptionTitle">我的簽名檔</h5>
-                <div className={disableBtn?'disable btn':'addBtn btn'}><label for="upload">新增</label><input disabled={disableBtn} onChange={handleOnPreview} style={{'opacity':0}} type="file" id="upload" name="upload" accept=".jpg, .jpeg, .png, .pdf"/></div>
+                <div className={disableBtn?'disable btn':'addBtn btn'}><label for="upload">新增</label><input disabled={disableBtn} onChange={handleOnPreview} style={{'opacity':0}} type="file" id="upload" name="upload" accept=".jpg, .jpeg, .png"/></div>
             </div>
             <div className="signatureUpload"> 
                 {!imageSrc && (<p className="description">尚未建立簽名檔，請按右上方新增鈕建立</p>)}
