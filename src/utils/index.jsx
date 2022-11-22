@@ -1,6 +1,7 @@
 
 export const getMousePos=(canvas,evt)=>{
     let rect = canvas.getBoundingClientRect()
+    console.log(evt.clientX,rect)
     return{
         x:evt.clientX-rect.left,
         y:evt.clientY-rect.top
@@ -10,8 +11,8 @@ export const getMousePos=(canvas,evt)=>{
 export const getTouchPos=(canvas,evt)=>{
     let rect = canvas.getBoundingClientRect()
     return{
-        x:evt.touches[0]-rect.left,
-        y:evt.touches[0]-rect.top
+        x:evt.touches[0].clientX - rect.left,
+        y:evt.touches[0].clientY - rect.top
     }
 }
 
