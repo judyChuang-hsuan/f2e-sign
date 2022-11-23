@@ -17,7 +17,6 @@ const SignProvider = ({ children }) => {
 
   const handleConvertToImage =() =>{
     const image = canvas.toDataURL()
-    console.log(image);
     setSignSrc(image)
   }
   return (

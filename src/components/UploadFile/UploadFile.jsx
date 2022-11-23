@@ -2,7 +2,6 @@ import { Button } from "@mui/material";
 import "./UploadFile.less";
 import React, { useState, useRef, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import { getScaledDim } from "../../utils/index";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 

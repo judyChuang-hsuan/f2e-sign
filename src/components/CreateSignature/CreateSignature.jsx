@@ -8,7 +8,7 @@ const CreateSignature = () => {
   const {showClearBtn, clearCanvas, handleConvertToImage, signSrc } = useSignContext();
   const [open, setOpen] = useState(false);
   const [imageSrc, setImageSrc] = useState([]);
-
+  console.log(signSrc)
   const fetchImage = () => {
     const src = JSON.parse(localStorage.getItem("signature"));
     setImageSrc(src);
@@ -29,6 +29,8 @@ const CreateSignature = () => {
           從簽名檔中獲取簽名
         </h4>
       </div>
+      {signSrc?(<img src={signSrc} alt="簽名" className="saveSignature"/>):(
+      <>
       <Canvas />
       {showClearBtn && (
         <div className="clearBtnSection">
@@ -52,6 +54,8 @@ const CreateSignature = () => {
           </div>
         </div>
       </Modal>
+      </>
+      )}
     </section>
   );
 };

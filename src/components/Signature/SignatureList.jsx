@@ -22,6 +22,8 @@ const SignatureList = () =>{
       //刪除簽名檔
       const handleDeleteSignature = (id)=>{
         setImageSrc(imageSrc.filter(image=>image.id!==id))
+        console.log(imageSrc)
+        localStorage.setItem('signature',JSON.stringify(imageSrc))
       }
 
       useEffect(()=>{
