@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Canvas.less";
 import { getTouchPos, getMousePos } from "@utils/index";
 import { useSignContext } from "@context";
+import { useMediaQuery } from "@mui/material";
 const Canvas = () => {
   const { drawing, setDrawing, setShowClearBtn, ctx, setCtx,canvas, setCanvas } = useSignContext();
   const canvasRef = useRef(null);
-
+  const query = useMediaQuery('(min-width:600px)')
+  const canvasHeight = query?650:300
+  const canvasWidth = query?2000:500
   useEffect(() => {
     const current = canvasRef.current;
     setCanvas(current);
@@ -51,17 +54,18 @@ const Canvas = () => {
     ctx.shadowColor = "black";
     ctx.lineTo(mousePos.x, mousePos.y);
     ctx.stroke();
-    console.log(mousePos);
-  };
+  }; 
 
   const handleMouseUp = () => {
     setDrawing(false);
+    setShowClearBtn(true);
   };
 
   return (
     <div className="canvasSection">
       <canvas
-        height={330}
+        height={canvasHeight}
+        width={canvasWidth}
         ref={canvasRef}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
