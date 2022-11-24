@@ -9,6 +9,7 @@ const SignProvider = ({ children }) => {
   const [ctx, setCtx] = useState(null);
   const [canvas, setCanvas] = useState(null);
   const [signSrc, setSignSrc] = useState(null)
+  const [fileSrc, setFileSrc] = useState(null)
 
   const clearCanvas = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -32,7 +33,9 @@ const SignProvider = ({ children }) => {
         setCanvas,
         clearCanvas,
         handleConvertToImage,
-        signSrc
+        signSrc,
+        fileSrc,
+        setFileSrc
       }}
     >
       {children}

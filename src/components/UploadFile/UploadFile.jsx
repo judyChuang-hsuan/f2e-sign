@@ -2,10 +2,12 @@ import { Button } from "@mui/material";
 import "./UploadFile.less";
 import React, { useState, useRef, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import {useSignContext} from '@context'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
 const UploadFile = () => {
+  const {fileSrc, setFileSrc} = useSignContext()
   const canvasRef = useRef(null);
   const [imageSrc, setImageSrc] = useState(false);
   const [canvas, setCanvas] = useState(null);
@@ -21,7 +23,6 @@ const UploadFile = () => {
 
   const handleUploadPdf = (event) => {
     const file = event.target.files[0];
-    console.log(file, "file");
     if (file.type === "application/pdf") {
       let fileReader = new FileReader();
       fileReader.onload = function () {
@@ -59,6 +60,7 @@ const UploadFile = () => {
           }
         );
       };
+      setFileSrc(file)
       setImageSrc(true);
       fileReader.readAsArrayBuffer(file);
     } else {
@@ -72,12 +74,12 @@ const UploadFile = () => {
         // draw images
         ctx.drawImage(img, 0, 0, ctx.width, ctx.height);
       };
+      setFileSrc(file)
       setImageSrc(true);
       img.src = URL.createObjectURL(file);
     }
   };
 
-  console.log(imageSrc);
 
   return (
     <section className="uploadSection">

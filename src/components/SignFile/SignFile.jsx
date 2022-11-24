@@ -3,6 +3,7 @@ import './SignFile.less'
 import React,{useState} from 'react'
 import UploadFile from "@components/UploadFile/UploadFile"
 import CreateSignature from '@components/CreateSignature/CreateSignature'
+import Output from '@components/Output/Output'
 const steps=[
     {
         id:1,
@@ -14,7 +15,7 @@ const steps=[
     },
     {
         id:3,
-        component:'hi3'
+        component:<Output/>
     }
 ]
 const SignFile = () =>{
@@ -40,7 +41,7 @@ const SignFile = () =>{
         </Stepper>
         <div className="btnSection">
             {activeStep!==0 && <Button className="backBtn" onClick={handleBack}>上一步</Button>}
-            <Button className="nextBtn" onClick={handleNext}>下一步</Button>
+            <Button className="nextBtn" onClick={handleNext}>{activeStep===2?'下載':'下一步'}</Button>
         </div>
         </>
     )
